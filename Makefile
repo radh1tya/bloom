@@ -1,2 +1,2 @@
 bloom: main.c
-	$(CC) bloom.c -o bloom -wall -Wextra -pedantic -std=c99
+	$(CC) main.c -o bloom -Wall -Wextra -pedantic -std=c99
