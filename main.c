@@ -43,6 +43,9 @@ char editorReadKey() {
     return c;
 }
 
+void editorRefreshScreen() {
+    write(STDOUT_FILENO, "\x1b[2J", 4);
+}
 void editorProcessKeypress() {
     char c = editorReadKey();
 
@@ -55,6 +58,7 @@ void editorProcessKeypress() {
 int main() {
     enableRawMode();
     while(1) {
+	editorRefreshScreen();
 	editorProcessKeypress();
     }
     return 0;
